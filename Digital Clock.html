@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+    <body>
+        <h2 id="clock"></h2>
+
+        <script>
+            function updateClock() {
+                const date = new Date();
+                const hours = String(date.getHours()).padStart(2, '0');
+                const minutes = String(date.getMinutes()).padStart(2, '0');
+                const seconds = String(date.getSeconds()).padStart(2, '0');
+
+                document.getElementById('clock').textContent =
+                    `${hours}:${minutes}:${seconds}`;
+            }
+
+            updateClock(); // run immediately
+            setInterval(updateClock, 1000);
+        </script>
+    </body>
+</html>
